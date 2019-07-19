@@ -1,0 +1,15 @@
+version: '3.6'
+
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${PROJECT_NETWORK}
+ 
+services:
+  memcached:
+      container_name: test-memcached
+      image: memcached:latest

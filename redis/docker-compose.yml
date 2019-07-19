@@ -1,0 +1,15 @@
+version: '3.6'
+
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${PROJECT_NETWORK}
+
+services:
+  redis:
+    container_name: test-redis
+    image: redis:latest
